@@ -1,0 +1,54 @@
+Given an array of size N containing only 0s, 1s, and 2s; sort the array in ascending order.
+
+Example 1:
+
+Input: 
+N = 5
+arr[]= {0 2 1 2 0}
+Output:
+0 0 1 2 2
+Explanation:
+0s 1s and 2s are segregated into ascending order.
+
+pgm
+
+import java.util.*;
+import java.io.*;
+ 
+class Main {   
+    
+    static void segregateElements(int arr[], int n)
+    {                 
+        int temp[] = new int[n];       
+        int j = 0;          
+        for (int i = 0; i < n; i++)
+            if (arr[i] == 0)
+                temp[j++] = arr[i];        
+        if (j == n || j == 0)
+            return;        
+        for (int i = 0; i < n; i++)
+            if (arr[i] == 1)
+                temp[j++] = arr[i];
+        for (int i = 0; i < n; i++)
+            if (arr[i] == 2)
+                temp[j++] = arr[i];
+        for (int i = 0; i < n; i++)
+            arr[i] = temp[i];
+    }
+     
+    
+    public static void main(String arg[])
+    {
+        Scanner sc = new Scanner (System.in);
+        int n = sc.nextInt();
+        int arr[] = new int [n];
+        for (int i = 0; i < n; i++){
+            arr[i] =sc.nextInt();
+        } 
+        segregateElements(arr, n); 
+        for (int i = 0; i < n; i++)
+            System.out.print(arr[i] + " ");
+    }
+}
+
+Time complexity - O(n) - Space complexity
