@@ -1,0 +1,31 @@
+A string consists of converting all uppercase letters into lowercase letters and removing all non-alphanumeric characters. 
+Alphanumeric characters include letters and numbers.
+
+Input: "A man, a plan, a canal: Panama"
+Output: "amanaplanacanalpanama" 
+
+/* package codechef; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Main
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		// your code goes here
+		Scanner sc = new Scanner (System.in);		
+		String N = sc.nextLine();		
+		String M = (N.toLowerCase());
+		//System.out.print (M);
+		String P = " ";
+	   for(int i=0;i<M.length();i++){
+			if( (M.charAt(i) >= 'a' && M.charAt(i) <= 'z') || (M.charAt(i) >= '0' && M.charAt(i) <= '9') ){
+			P= P + M.charAt(i);
+		}
+		}	
+System.out.println(P);		
+	}
+}
